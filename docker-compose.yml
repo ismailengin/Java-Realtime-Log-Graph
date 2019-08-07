@@ -1,0 +1,43 @@
+version: '3.7'
+services:
+  zookeeper-kafka:
+    container_name: zookeeper
+    image: johnnypark/kafka-zookeeper
+    networks:
+      - kafka
+  producer:
+    container_name: producer
+    image: ismailengin/kafka_producer 
+    volumes:
+      - ./KafkaDemoProducer:/usr/src/app/KafkaDemoProducer
+      - type: volume
+        source: mydata
+        target: /data
+    networks:
+      - kafka
+  consumer:
+    container_name: consumer
+    image: ismailengin/kafka_consumer
+    volumes:
+      - ./KafkaDemoConsumer:/usr/src/app/
+      - "mydata:/data"  
+    networks:
+      - kafka
+  mongo:
+    container_name: db
+    image: mongo
+    networks:
+      - kafka
+  spring:
+    container_name: spring
+    image: ismailengin/kafka_spring
+    volumes: 
+      - "mydata:/data" 
+    networks: 
+      - kafka
+    ports: 
+      - 8080:8080    
+volumes: 
+  mydata:
+networks: 
+  kafka:
