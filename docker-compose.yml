@@ -9,7 +9,6 @@ services:
     container_name: producer
     image: ismailengin/kafka_producer 
     volumes:
-      - ./KafkaDemoProducer:/usr/src/app/KafkaDemoProducer
       - type: volume
         source: mydata
         target: /data
@@ -19,7 +18,6 @@ services:
     container_name: consumer
     image: ismailengin/kafka_consumer
     volumes:
-      - ./KafkaDemoConsumer:/usr/src/app/
       - "mydata:/data"  
     networks:
       - kafka
