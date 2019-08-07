@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="KafkaDemoProducer:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/KafkaDemoProducer_jar</output-path>
+    <root id="archive" name="KafkaDemoProducer.jar">
+      <element id="module-output" name="KafkaDemoProducer" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/kafka_2.11-2.3.0/libs/kafka-clients-2.3.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/slf4j-1.7.26/slf4j-api-1.7.26.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$USER_HOME$/Downloads/commons-io-2.6/commons-io-2.6.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
